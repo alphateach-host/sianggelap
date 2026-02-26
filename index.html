@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Identity | Premium Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+:root {
+        --rana-grey: #F3F5F7;
+        --electric-blue: #007AFF;
+        --royal-purple: #8E2DE2;
+        --white: #ffffff;
+    }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(180deg, #D6CBEB 0%, #F3F5F7 50%, #FFFFFF 100%);
+            background-attachment: fixed;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: #1d1d1f;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .avatar-img {
+            width: 200px;
+            height: 250px;
+            border-radius: 28px;
+            background: var(--white);
+            padding: 4px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #6A5ACD 0%, #9370DB 40%, #DDA0DD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .badge-container {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub-desc {
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(142, 45, 226, 0.1);
+            color: #5E35B1;
+            border: 1px solid rgba(142, 45, 226, 0.2);
+            display: inline-block;
+            backdrop-filter: blur(4px);
+        }
+
+        .lkam-card-container {
+            --lkam-accent: #8E2DE2;
+            --lkam-text-main: #1D1D1F;
+            --lkam-text-muted: #636E72;
+            --lkam-radius: 24px;
+            margin: 20px 0;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.6);
+            text-align: left;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: var(--lkam-radius);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        .lkam-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .lkam-brand-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .lkam-title-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lkam-main-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--lkam-text-main);
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -0.3px;
+            text-transform: uppercase;
+        }
+
+        .lkam-description-text {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--lkam-text-muted);
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.1px;
+        }
+
+
+        .lkam-action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .lkam-btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            border-radius: 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lkam-btn-web {
+            background: var(--lkam-accent);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(142, 45, 226, 0.25);
+        }
+
+        .lkam-position-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--lkam-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 4px;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .lkam-title-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .smv-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .smv-card {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-radius: 22px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .smv-ig {
+            background: rgba(225, 48, 108, 0.08);
+            color: #E1306C;
+        }
+
+        .smv-tg {
+            background: rgba(0, 136, 204, 0.08);
+            color: #0088cc;
+        }
+
+        .smv-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .smv-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            /* Konsisten dengan kartu bisnis */
+        }
+
+        .smv-platform {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .smv-handle {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.7;
+            color: #1d1d1f;
+        }
+
+        .smv-card:active {
+            transform: scale(0.97);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://res.cloudinary.com/dzxhnvu4a/image/upload/v1772087679/IMG-20260226-WA0000_yd4xix.jpg" class="avatar-img" alt="Profile">
+            <h1>@siang_gelap</h1>
+            <div class="badge-container">
+                <span class="sub-desc">DIGITAL CREATOR</span>
+            </div>
+        </div>
+
+        <section class="lkam-card-container" id="biz-lion-king">
+            <div class="lkam-header-flex">
+                <img src="https://res.cloudinary.com/dzxhnvu4a/image/upload/v1768383054/IMG-20260114-WA0020_efqs1m.jpg"
+                class="lkam-brand-logo"
+                alt="Lion King Asset Management Logo">
+                <div class="lkam-title-group">
+                    <span class="lkam-position-label">Founder</span>
+                    <h2 class="lkam-main-title">Lion King<br>Asset Management</h2>
+                </div>
+            </div>
+            <p class="lkam-description-text">
+                Strategic asset management leveraging innovative frameworks to maximize capital growth and digital value in a dynamic market landscape.
+            </p>
+            <div class="lkam-action-grid">
+                <a href="https://alphateach-host.github.io/lionkingassetmanagement/"
+                    target="_blank"
+                    rel="noopener"
+                    class="lkam-btn-action lkam-btn-web">
+                    Official Website
+                </a>
+                <a href="https://wa.me/6287776366677?text=*INFO*%20LionKIngAssetManagement%20"
+                    target="_blank"
+                    rel="noopener"
+                    class="lkam-btn-action lkam-btn-contact">
+                    Contact
+                </a>
+            </div>
+        </section>
+
+        <section class="lkam-card-container" id="biz-alpha-tech">
+            <div class="lkam-header-flex">
+                <img src="https://res.cloudinary.com/dzxhnvu4a/image/upload/v1768383044/IMG-20260114-WA0021_diuypl.jpg"
+                class="lkam-brand-logo"
+                alt="Alpha Technology Logo">
+                <div class="lkam-title-group">
+                    <span class="lkam-position-label">Developper</span>
+                    <h2 class="lkam-main-title">Alpha<br>Technology</h2>
+                </div>
+            </div>
+            <p class="lkam-description-text">
+                Driving digital transformation through high-performance software engineering, innovative system architecture, and advanced technological solutions.
+            </p>
+            <div class="lkam-action-grid">
+                <a href="https://alphateach-host.github.io/ALPHA/"
+                    target="_blank"
+                    rel="noopener"
+                    class="lkam-btn-action lkam-btn-web">
+                    Official Website
+                </a>
+                <a href="https://t.me/AlphaDev_id"
+                    target="_blank"
+                    rel="noopener"
+                    class="lkam-btn-action lkam-btn-contact">
+                    Contact
+                </a>
+            </div>
+        </section>
+        <div class="smv-container">
+            <a href="https://instagram.com/siang_gelap" target="_blank" class="smv-card smv-ig">
+                <div class="smv-icon-wrapper">
+                    <svg width="512" height="512" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#f58529" />
+                                <stop offset="25%" stop-color="#feda77" />
+                                <stop offset="50%" stop-color="#dd2a7b" />
+                                <stop offset="75%" stop-color="#8134af" />
+                                <stop offset="100%" stop-color="#515bd4" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig-gradient)" />
+                        <circle cx="12" cy="12" r="5" fill="white" />
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="white" />
+                    </svg>
+                </div>
+                <div class="smv-info">
+                    <span class="smv-platform">Instagram</span>
+                    <span class="smv-handle">@siang_gelap</span>
+                </div>
+            </a>
+
+            <a href="https://t.me/siang_gelap" target="_blank" class="smv-card smv-tg">
+                <div class="smv-icon-wrapper">
+                    <svg width="512" height="512" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="tg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#37AEE2" />
+                                <stop offset="100%" stop-color="#1E96C8" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="120" cy="120" r="120" fill="url(#tg-gradient)" />
+                        <path d="M180 70L160 170C158 178 153 180 146 176L110 150L93 166C91 168 89 170 85 170L88 130L160 85C163 83 159 81 155 83L70 120L40 110C33 108 33 103 42 100L175 55C182 53 187 58 185 66L180 70Z" fill="white" />
+                    </svg>
+                </div>
+                <div class="smv-info">
+                    <span class="smv-platform">Telegram</span>
+                    <span class="smv-handle">@siang_gelap</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

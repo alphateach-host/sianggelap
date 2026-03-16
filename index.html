@@ -122,6 +122,70 @@
             display: inline-block;
             backdrop-filter: blur(4px);
         }
+        
+                .skill-bento-area {
+            width: 100%;
+            max-width: 420px;
+            margin: 20px auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .skill-bento-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            height: 27px;
+            padding: 0 12px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(142, 45, 226, 0.15);
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-grow: 1;
+        }
+
+        .skill-label {
+            font-size: 8px;
+            font-weight: 800;
+            color: #4A148C;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            justify-self: center;
+        }
+
+        .skill-dot {
+            width: 4px;
+            height: 4px;
+            background: #8E2DE2;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 6px rgba(142, 45, 226, 0.4);
+        }
+
+        .skill-item:active {
+            transform: scale(0.97);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #8E2DE2;
+        }
+
+        @media (hover: hover) {
+            .skill-item:hover {
+                background: #ffffff;
+                border-color: #8E2DE2;
+                box-shadow: 0 4px 12px rgba(142, 45, 226, 0.1);
+            }
+        }
 
         .wallet-card {
             position: relative;
@@ -418,69 +482,7 @@
             margin-right: 16px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
-
-        .skill-bento-area {
-            width: 100%;
-            max-width: 420px;
-            margin: 20px auto;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .skill-bento-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            height: 27px;
-            padding: 0 12px;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(142, 45, 226, 0.15);
-            border-radius: 10px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-grow: 1;
-        }
-
-        .skill-label {
-            font-size: 8px;
-            font-weight: 800;
-            color: #4A148C;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            justify-self: center;
-        }
-
-        .skill-dot {
-            width: 4px;
-            height: 4px;
-            background: #8E2DE2;
-            border-radius: 50%;
-            flex-shrink: 0;
-            box-shadow: 0 0 6px rgba(142, 45, 226, 0.4);
-        }
-
-        .skill-item:active {
-            transform: scale(0.97);
-            background: rgba(255, 255, 255, 0.9);
-            border-color: #8E2DE2;
-        }
-
-        @media (hover: hover) {
-            .skill-item:hover {
-                background: #ffffff;
-                border-color: #8E2DE2;
-                box-shadow: 0 4px 12px rgba(142, 45, 226, 0.1);
-            }
-        }
+        
         .smv-info {
             display: flex;
             flex-direction: column;
@@ -616,6 +618,43 @@
                 <span class="sub-desc">DIGITAL CREATOR</span>
             </div>
         </div>
+        
+        <section class="skill-bento-area">
+        <div class="skill-bento-grid">
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Web Architecture</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Web Developer</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Web Interface Designer</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Web Experience Strategic</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Script Logical Strategic</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Portfolio Analytic</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">Smart Contract Analytic</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-label">AI Functionary</span>
+            </div>
+        </div>
+    </section>
 
         <section class="wallet-card" onclick="copyWallet(event)">
             <div class="wallet-header">
@@ -708,44 +747,6 @@
             </a>
         </div>
     </section>
-
-    <section class="skill-bento-area">
-        <div class="skill-bento-grid">
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Web Architecture</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Web Developer</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Web Interface Designer</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Web Experience Strategic</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Script Logical Strategic</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Portfolio Analytic</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">Smart Contract Analytic</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-dot"></div>
-                <span class="skill-label">AI Functionary</span>
-            </div>
-        </div>
-    </section>
-
 
     <section class="smv-container">
         <a href="https://instagram.com/siang_gelap" target="_blank" class="smv-card smv-ig">
